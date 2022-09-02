@@ -1,7 +1,10 @@
 package com.project.todo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +25,12 @@ public class TaskController {
     @ResponseStatus(HttpStatus.CREATED)
     public Task createTask (@RequestBody Task task){
         return taskService.createTask(task);
+    }
+
+    @GetMapping("/tasks")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Task> getTasks(){
+        return taskService.listAllTasks();
     }
     
 }
