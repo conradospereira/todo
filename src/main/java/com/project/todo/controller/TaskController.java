@@ -35,6 +35,8 @@ public class TaskController {
         return taskService.listAllTasks();
     }
 
+    @GetMapping("/tasks/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Task> getTaskById(@PathVariable (value = "id") Long id){
         return taskService.findTaskById(id);
     }
