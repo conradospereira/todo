@@ -9,13 +9,12 @@ import org.springframework.stereotype.Service;
 import com.project.todo.model.Task;
 import com.project.todo.repository.TaskRepository;
 
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class TaskService {
     
-    @Autowired
     private TaskRepository taskRepository;
 
     public Task createTask (Task task){
@@ -30,5 +29,9 @@ public class TaskService {
         return taskRepository.findById(id)
                 .map(task -> ResponseEntity.ok().body(task))
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    public ResponseEntity<Task> updateTaskById(Task task, Long id) {
+        return null;
     }
 }

@@ -1,6 +1,7 @@
 package com.project.todo.model;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,9 +34,12 @@ public class Task {
     @Column(nullable = false)
     private String description;
 
+    @Column
+    private LocalDateTime deadLine;
+
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
-    private Date createAt;
+    private LocalDateTime createAt;
 
     @UpdateTimestamp
     @Column(name = "updated_at")
