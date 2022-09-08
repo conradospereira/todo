@@ -33,4 +33,8 @@ public class TaskService {
     public ResponseEntity<Task> updateTaskById(Task task, Long id) {
         return null;
     }
+
+    public ResponseEntity<Object> deleteById(Long id) {
+        return null;
+    }
 }
