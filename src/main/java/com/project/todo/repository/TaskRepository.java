@@ -7,5 +7,5 @@ import com.project.todo.model.Task;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
-    
+  
 }

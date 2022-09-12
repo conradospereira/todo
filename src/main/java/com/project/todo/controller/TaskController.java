@@ -84,6 +84,12 @@ public class TaskController {
         return taskService.updateTaskById(task, id);
     }
     
+    @ApiOperation(value = "Deleting a task.")
+    @ApiResponses(value ={
+        @ApiResponse(code = 204, message = "Tasks deleted successfully"),
+        @ApiResponse(code = 484, message = "Could not delete task.")
+    })
+
     @DeleteMapping("/tasks/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Object> deleteTaskById(@PathVariable (value = "id") Long id) {
